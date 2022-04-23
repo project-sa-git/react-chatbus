@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    # このフォルダがコンテナ内の「:/front」にマウントされる
+      - ./front:/front
+    working_dir: /front
+    command: node
+    tty: true
